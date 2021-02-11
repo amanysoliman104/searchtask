@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title> Coffee </title>
+ 
+
+</head>
+
+<body>
+	
+ <h1> Coffee Machine </h1>
+ 
+
+    <form method="get">
+        {{ filter.form.as_p }}
+        <input type="submit" />
+    </form>
+    <br />
+    {% if not filter.qs %}
+        <h4>0</h4>
+    {%else%}  
+        {% for obj in filter.qs %}  
+            {{ obj.code }} <br />
+            
+        {% endfor %}
+    {% endif %}
+    
+
+
+	
+</body>
+</html>
